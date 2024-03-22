@@ -34,19 +34,19 @@ public class InventoryClickListener implements Listener {
             if (item.getType() == Material.CRAFTING_TABLE && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aCityBuild")) {
 
                 event.setCancelled(true);
-                player.teleport(Lobby.getInstance().getLocationManager().getLocation("citybuild"));
+                player.teleport(Lobby.getInstance().getHashMapLocations().get("CITYBUILD"));
 
             }
             if (item.getType() == Material.GRASS_BLOCK && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aSurvival")) {
 
                 event.setCancelled(true);
-                player.teleport(Lobby.getInstance().getLocationManager().getLocation("survival"));
+                player.teleport(Lobby.getInstance().getHashMapLocations().get("SURVIVAL"));
 
             }
             if (item.getType() == Material.GRASS_BLOCK && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aSkyWars")) {
 
                 event.setCancelled(true);
-                player.teleport(Lobby.getInstance().getLocationManager().getLocation("skywars"));
+                player.teleport(Lobby.getInstance().getHashMapLocations().get("SKYWARS"));
 
             }
 

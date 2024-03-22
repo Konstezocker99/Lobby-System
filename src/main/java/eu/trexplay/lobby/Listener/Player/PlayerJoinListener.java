@@ -13,12 +13,14 @@ public class PlayerJoinListener implements Listener {
 
         Player player = event.getPlayer();
 
-        event.setJoinMessage("");
+        if (Lobby.getInstance().getConfig().getString("config.joinmessage") == null) {
+            event.setJoinMessage(Lobby.getInstance().getConfig().getString("config.joinmessage").replace("%PLAYER%", player.getName()));
+        }
 
-      //  player.teleport(Lobby.getInstance().getLocationManager().getLocation("spawn"));
         player.teleport(Lobby.getInstance().getHashMapLocations().get("SPAWN"));
         Lobby.getInstance().getInventoryManager().setJoinInventory(player);
-       // player.setScoreboard(Lobby.getInstance().getScoreBoardManager().setScoreBoardtoPlayer(player));
+        player.setScoreboard(Lobby.getInstance().getScoreBoardManager().setScoreBoardtoPlayer(player));
+
     }
 
 }

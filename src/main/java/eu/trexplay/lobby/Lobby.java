@@ -1,8 +1,10 @@
 package eu.trexplay.lobby;
 
 import eu.trexplay.lobby.Command.SetLocationCommand;
-import eu.trexplay.lobby.Listener.Player.PlayerInteractListener;
-import eu.trexplay.lobby.Listener.Player.PlayerJoinListener;
+import eu.trexplay.lobby.Listener.EntityDamageListener;
+import eu.trexplay.lobby.Listener.FoodLevelChangeListener;
+import eu.trexplay.lobby.Listener.InventoryClickListener;
+import eu.trexplay.lobby.Listener.Player.*;
 import eu.trexplay.lobby.Listener.WeahterChangeListener;
 import eu.trexplay.lobby.Manager.*;
 import eu.trexplay.lobby.utils.Config;
@@ -73,12 +75,20 @@ public final class Lobby extends JavaPlugin {
     private void registerCommand() {
         getCommand("setlocation").setExecutor(new SetLocationCommand());
     }
+
     private void registerListener() {
         PluginManager pluginManager = instance.getServer().getPluginManager();
-        
-        pluginManager.registerEvents(new PlayerInteractListener(), this);
-        pluginManager.registerEvents(new PlayerJoinListener(), this);
 
+        pluginManager.registerEvents(new PlayerDropItemListener(), this);
+        pluginManager.registerEvents(new PlayerInteractListener(), this);
+        pluginManager.registerEvents(new PlayerItemConsumeListener(), this);
+        pluginManager.registerEvents(new PlayerJoinListener(), this);
+        pluginManager.registerEvents(new PlayerPickupItemListener(), this);
+        pluginManager.registerEvents(new PlayerQuitListener(), this);
+
+        pluginManager.registerEvents(new EntityDamageListener(), this);
+        pluginManager.registerEvents(new FoodLevelChangeListener(), this);
+        pluginManager.registerEvents(new InventoryClickListener(), this);
         pluginManager.registerEvents(new WeahterChangeListener(), this);
     }
 
@@ -109,6 +119,7 @@ public final class Lobby extends JavaPlugin {
     public CloudAPIManager getCloudAPIManager() {
         return cloudAPIManager;
     }
+
     public HashMap<String, Location> getHashMapLocations() {return locations;}
 
     public FileConfiguration getConfig() {
