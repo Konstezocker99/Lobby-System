@@ -1,0 +1,16 @@
+eu\trexplay\lobby\Manager\InventoryManager$1.class
+eu\trexplay\lobby\Lobby$1.class
+eu\trexplay\lobby\utils\Loader.class
+eu\trexplay\lobby\Listener\WeahterChangeListener.class
+eu\trexplay\lobby\Listener\Player\PlayerInteractListener.class
+eu\trexplay\lobby\Manager\LocationManager.class
+eu\trexplay\lobby\Lobby.class
+eu\trexplay\lobby\Manager\ScoreBoardManager.class
+eu\trexplay\lobby\Manager\CloudAPIManager.class
+eu\trexplay\lobby\Listener\Player\PlayerJoinListener.class
+eu\trexplay\lobby\Command\SetLocationCommand.class
+eu\trexplay\lobby\Listener\Player\InventoryClickListener.class
+eu\trexplay\lobby\utils\Config.class
+eu\trexplay\lobby\utils\ItemBuilder.class
+eu\trexplay\lobby\Manager\InventoryManager.class
+eu\trexplay\lobby\Manager\HikariCPManager.class

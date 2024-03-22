@@ -1,0 +1,8 @@
+name: Lobby
+version: '1.0'
+main: eu.trexplay.lobby.Lobby
+api-version: '1.20'
+load: STARTUP
+
+commands:
+  setlocation:
