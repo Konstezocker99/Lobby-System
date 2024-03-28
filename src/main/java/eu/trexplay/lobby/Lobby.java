@@ -1,11 +1,8 @@
 package eu.trexplay.lobby;
 
 import eu.trexplay.lobby.Command.SetLocationCommand;
-import eu.trexplay.lobby.Listener.EntityDamageListener;
-import eu.trexplay.lobby.Listener.FoodLevelChangeListener;
-import eu.trexplay.lobby.Listener.InventoryClickListener;
+import eu.trexplay.lobby.Listener.*;
 import eu.trexplay.lobby.Listener.Player.*;
-import eu.trexplay.lobby.Listener.WeahterChangeListener;
 import eu.trexplay.lobby.Manager.*;
 import eu.trexplay.lobby.utils.Config;
 import eu.trexplay.lobby.utils.Loader;
@@ -86,6 +83,8 @@ public final class Lobby extends JavaPlugin {
         pluginManager.registerEvents(new PlayerPickupItemListener(), this);
         pluginManager.registerEvents(new PlayerQuitListener(), this);
 
+        pluginManager.registerEvents(new BlockBreakListener(), this);
+        pluginManager.registerEvents(new BlockPlaceListener(), this);
         pluginManager.registerEvents(new EntityDamageListener(), this);
         pluginManager.registerEvents(new FoodLevelChangeListener(), this);
         pluginManager.registerEvents(new InventoryClickListener(), this);

@@ -1,5 +1,5 @@
 name: Lobby
-version: '1.0'
+version: '${project.version}'
 main: eu.trexplay.lobby.Lobby
 api-version: '1.20'
 load: STARTUP

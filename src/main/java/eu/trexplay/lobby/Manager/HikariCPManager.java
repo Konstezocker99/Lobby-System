@@ -27,7 +27,7 @@ public class HikariCPManager {
         hikariCP.setMaxLifetime(870000000);
         hikariCP.setConnectionTimeout(870000000);
         hikariCP.setMinimumIdle(1);
-        hikariCP.setMaximumPoolSize(1);
+        hikariCP.setMaximumPoolSize(3);
         this.host = this.mySQLConfig.getString("mysql.host");
         this.port = this.mySQLConfig.getInt("mysql.port");
         this.database = this.mySQLConfig.getString("mysql.database");

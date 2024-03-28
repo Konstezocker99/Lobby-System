@@ -26,8 +26,9 @@ public class InventoryClickListener implements Listener {
         if(item == null || item.getType() == Material.AIR){
             return;
         }
+        
 
-        if (event.getView().getTitle().equalsIgnoreCase("§6Navigator")) {
+        if (event.getView().getTitle().equalsIgnoreCase("§aNavigator")) {
 
             event.setCancelled(true);
 
@@ -49,6 +50,55 @@ public class InventoryClickListener implements Listener {
                 player.teleport(Lobby.getInstance().getHashMapLocations().get("SKYWARS"));
 
             }
+            if (item.getType() == Material.GRASS_BLOCK && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aFFA")) {
+
+                event.setCancelled(true);
+                player.teleport(Lobby.getInstance().getHashMapLocations().get("FFA"));
+
+            }
+            if (item.getType() == Material.GRASS_BLOCK && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aBedwars")) {
+
+                event.setCancelled(true);
+                player.teleport(Lobby.getInstance().getHashMapLocations().get("BEDWARS"));
+
+            }
+            if (item.getType() == Material.GRASS_BLOCK && item.getItemMeta().getDisplayName().equalsIgnoreCase("§a1vs1")) {
+
+                event.setCancelled(true);
+                player.teleport(Lobby.getInstance().getHashMapLocations().get("1VS1"));
+
+            }
+            if (item.getType() == Material.GRASS_BLOCK && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aJumpLeage")) {
+
+                event.setCancelled(true);
+                player.teleport(Lobby.getInstance().getHashMapLocations().get("JUMPLEAGE"));
+
+            }
+            if (item.getType() == Material.GRASS_BLOCK && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aTTT")) {
+
+                event.setCancelled(true);
+                player.teleport(Lobby.getInstance().getHashMapLocations().get("TTT"));
+
+            }
+            if (item.getType() == Material.GRASS_BLOCK && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aFastBuilder")) {
+
+                event.setCancelled(true);
+                player.teleport(Lobby.getInstance().getHashMapLocations().get("FASTBUILDER"));
+
+            }
+            if (item.getType() == Material.GRASS_BLOCK && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aMLGRush")) {
+
+                event.setCancelled(true);
+                player.teleport(Lobby.getInstance().getHashMapLocations().get("MLGRUSH"));
+
+            }
+            if (item.getType() == Material.GRASS_BLOCK && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aSpawn")) {
+
+                event.setCancelled(true);
+                player.teleport(Lobby.getInstance().getHashMapLocations().get("SPAWN"));
+
+            }
+
 
         } else if (event.getView().getTitle().equalsIgnoreCase("§aSpecials")) {
 

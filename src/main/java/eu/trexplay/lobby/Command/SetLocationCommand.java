@@ -18,16 +18,17 @@ public class SetLocationCommand implements CommandExecutor, TabCompleter {
     }
     private ArrayList<String> modes = new ArrayList<>();
     private void loadmodes() {
-        modes.add("Spawn");
         modes.add("CityBuild");
-        modes.add("MLGRush");
-        modes.add("FFA");
-        modes.add("1vs1");
-        modes.add("BedWars");
-        modes.add("help");
+        modes.add("Survival");
         modes.add("SkyWars");
+        modes.add("FFA");
+        modes.add("Bedwars");
+        modes.add("1vs1");
+        modes.add("JumpLeage");
+        modes.add("TTT");
         modes.add("FastBuilder");
-        modes.add("SMP");
+        modes.add("MLGRush");
+        modes.add("Spawn");
     }
 
     @Override
@@ -47,7 +48,7 @@ public class SetLocationCommand implements CommandExecutor, TabCompleter {
 
         if (args.length == 1) {
             switch (args[0].toLowerCase()) {
-                case "spawn", "citybuild", "mlgrush", "ffa", "bedwars", "skywars", "fastbuilder", "1vs1", "smp" -> Lobby.getInstance().getLocationManager().setLocation(args[0].toUpperCase(), player.getLocation());
+                case "citybuild", "survival", "skywars", "ffa", "bedwars", "1vs1", "jumpleage", "ttt", "fastbuilder", "mlgrush", "spawn" -> Lobby.getInstance().getLocationManager().setLocation(args[0].toUpperCase(), player.getLocation());
                 case "help" -> sendHelp(player);
             }
         }

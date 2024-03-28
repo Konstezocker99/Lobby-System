@@ -1,6 +1,7 @@
 package eu.trexplay.lobby.Listener.Player;
 
 import eu.trexplay.lobby.Lobby;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,7 +21,9 @@ public class PlayerJoinListener implements Listener {
         player.teleport(Lobby.getInstance().getHashMapLocations().get("SPAWN"));
         Lobby.getInstance().getInventoryManager().setJoinInventory(player);
         player.setScoreboard(Lobby.getInstance().getScoreBoardManager().setScoreBoardtoPlayer(player));
-
+        for (Player onlineplayer : Bukkit.getOnlinePlayers()) {
+            onlineplayer.setScoreboard(Lobby.getInstance().getScoreBoardManager().setScoreBoardtoPlayer(onlineplayer));
+        }
     }
 
 }
