@@ -68,10 +68,18 @@ public class HikariCPManager {
 
     private void createTables() {
         try {
+
             String query = "CREATE TABLE IF NOT EXISTS Location (name VARCHAR(50), world VARCHAR(50), x VARCHAR(50), y VARCHAR(50), z VARCHAR(50), yaw VARCHAR(50), pitch VARCHAR(50))";
+            String query2 = "CREATE TABLE IF NOT EXISTS Cookie (UUID VARCHAR(50), number VARCHAR(50))";
+
             PreparedStatement preparedStatement = this.connection.prepareStatement(query);
+            PreparedStatement preparedStatement2 = this.connection.prepareStatement(query2);
+
             preparedStatement.execute();
             preparedStatement.close();
+
+            preparedStatement2.execute();
+            preparedStatement2.close();
         } catch (Exception e) {
             Bukkit.getConsoleSender().sendMessage(Lobby.getInstance().getPREFIX() + "§cBeim erstellen der §9Datenbank-Tabellen §cist ein Fehler aufgetreten§8!");
             e.printStackTrace();

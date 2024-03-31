@@ -13,7 +13,7 @@ public class ScoreBoardManager {
 
     public Scoreboard setScoreBoardtoPlayer(Player player) {
         Scoreboard scoreboard = Bukkit.getScoreboardManager().getNewScoreboard();
-        Objective objective = scoreboard.registerNewObjective("main", "main", "§9TREXPLAY");
+        Objective objective = scoreboard.registerNewObjective("main", "main", "§9Trexplay");
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
         objective.getScore("§8» §aOnline").setScore(8);

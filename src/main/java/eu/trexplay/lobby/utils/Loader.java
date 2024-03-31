@@ -7,12 +7,14 @@ import org.bukkit.World;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.UUID;
 
 public class Loader {
 
     private static void setLocationToHashMap() {
-
         try {
+
+            Lobby.getInstance().getHashMapLocations().clear();
 
             PreparedStatement preparedStatement = Lobby.getInstance().getHikariCPManager().getConnection().prepareStatement("SELECT * FROM Location");
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -52,6 +54,31 @@ public class Loader {
 
     }
 
+    private static void setCookieToHashMap(){
+        System.out.println("DEBUG");
+        try {
+            System.out.println("DEBUG");
+
+            PreparedStatement preparedStatement = Lobby.getInstance().getHikariCPManager().getConnection().prepareStatement("SELECT * FROM Cookie");
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+
+                String user = resultSet.getString("UUID");
+
+                Integer number = (resultSet.getInt("number"));
+
+                Lobby.getInstance().getHashMapCookies().put(UUID.fromString(user), number);
+            }
+
+        } catch (SQLException sqlException) {
+
+            sqlException.printStackTrace();
+
+        }
+
+    }
+
     public static void onEnable() {
 
         Bukkit.getConsoleSender().sendMessage("____________________________________________________");
@@ -65,7 +92,7 @@ public class Loader {
         Bukkit.getConsoleSender().sendMessage("____________________________________________________");
 
         setLocationToHashMap();
-
+        setCookieToHashMap();
     }
 
     public static void onDisable() {

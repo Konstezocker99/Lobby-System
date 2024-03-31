@@ -18,6 +18,11 @@ public class PlayerJoinListener implements Listener {
             event.setJoinMessage(Lobby.getInstance().getConfig().getString("config.joinmessage").replace("%PLAYER%", player.getName()));
         }
 
+
+        if (!Lobby.getInstance().getHashMapCookies().containsKey(player.getUniqueId())) {
+            Lobby.getInstance().getHashMapCookies().put(player.getUniqueId(), 0);
+        }
+
         player.teleport(Lobby.getInstance().getHashMapLocations().get("SPAWN"));
         Lobby.getInstance().getInventoryManager().setJoinInventory(player);
         player.setScoreboard(Lobby.getInstance().getScoreBoardManager().setScoreBoardtoPlayer(player));

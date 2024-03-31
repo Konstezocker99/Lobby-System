@@ -80,7 +80,7 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder setItemStack (ItemStack stack) {
+    public ItemBuilder setItemStack(ItemStack stack) {
         this.stack = stack;
         return this;
     }

@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.sql.Connection;
 import java.util.HashMap;
+import java.util.UUID;
 
 public final class Lobby extends JavaPlugin {
 
@@ -29,6 +30,7 @@ public final class Lobby extends JavaPlugin {
     private ScoreBoardManager scoreBoardManager;
     private CloudAPIManager cloudAPIManager;
     private final HashMap<String, Location> locations = new HashMap<>();
+    private final HashMap<UUID, Integer> cookies = new HashMap<>();
 
     @Override
     public void onEnable() {
@@ -120,6 +122,7 @@ public final class Lobby extends JavaPlugin {
     }
 
     public HashMap<String, Location> getHashMapLocations() {return locations;}
+    public HashMap<UUID, Integer> getHashMapCookies() {return cookies;}
 
     public FileConfiguration getConfig() {
         return this.config.getFileConfiguration();

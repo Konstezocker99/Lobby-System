@@ -11,11 +11,11 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.UUID;
 
 public class PlayerInteractListener implements Listener {
 
-    private HashMap<Player, Integer> honeyBlockClicks = new HashMap<>();
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
 
@@ -23,32 +23,29 @@ public class PlayerInteractListener implements Listener {
         Action action = event.getAction();
         ItemStack item = player.getInventory().getItemInMainHand();
 
-        if (action.isLeftClick() && event.getClickedBlock().getType() == Material.HONEY_BLOCK) {
-            int currentClicks = honeyBlockClicks.getOrDefault(player, 0);
-            honeyBlockClicks.put(player, currentClicks + 1);
+        if (action.isLeftClick() && event.getClickedBlock() != null && event.getClickedBlock().getType() == Material.HONEY_BLOCK) {
 
-            player.sendMessage("Honey block clicks: " + honeyBlockClicks.get(player));
-        }
+            int oldclick = Lobby.getInstance().getHashMapCookies().get(player.getUniqueId());
+            Lobby.getInstance().getHashMapCookies().put(player.getUniqueId(),oldclick + 1);
+            player.sendMessage("Honey block clicks: " + Lobby.getInstance().getHashMapCookies().get(player.getUniqueId()));
 
-
-        if (item.hasItemMeta() && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aNavigator") && item.getType() == Material.MUSIC_DISC_CAT) {
+        } else if (item.hasItemMeta() && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aNavigator") && item.getType() == Material.MUSIC_DISC_CAT) {
 
             player.openInventory(Lobby.getInstance().getInventoryManager().openNavigatorInventory());
 
-        } else if (item.getItemMeta().getDisplayName().equalsIgnoreCase("§aSpecials") && item.getType() == Material.CHEST) {
+        } else if (item.hasItemMeta() && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aSpecials") && item.getType() == Material.CHEST) {
 
             player.openInventory(Lobby.getInstance().getInventoryManager().openSpecialInventory());
 
-        } else if (item.getItemMeta().getDisplayName().equalsIgnoreCase("§aItems") && item.getType() == Material.ENDER_CHEST) {
+        } else if (item.hasItemMeta() && item.getItemMeta().getDisplayName().equalsIgnoreCase("§aItems") && item.getType() == Material.ENDER_CHEST) {
 
             player.openInventory(Lobby.getInstance().getInventoryManager().openItemInventory());
 
         } else if (action.isRightClick() && event.getClickedBlock().getType() == Material.HONEY_BLOCK) {
 
-            player.openInventory(Lobby.getInstance().getInventoryManager().openCookiClickerInventory();)
+          //  player.openInventory(Lobby.getInstance().getInventoryManager().openCookieClickerInventory(player));
+            player.sendMessage("§cNoch nicht Verfügbar!");
 
         }
-
     }
-
 }
