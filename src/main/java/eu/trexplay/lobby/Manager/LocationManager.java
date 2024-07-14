@@ -49,7 +49,7 @@ public class LocationManager {
             resultSet.close();
 
         }catch (Exception exception) {
-            Lobby.getInstance().getLogger().info("Es ist ein Fehler aufgetretten!");
+            Lobby.getInstance().getLogger().info("&vEs ist ein Fehler aufgetretten!");
             exception.printStackTrace();
         }
 
@@ -76,7 +76,7 @@ public class LocationManager {
 
             preparedStatement.close();
         } catch (Exception exception) {
-            Lobby.getInstance().getLogger().info("Es ist ein Fehler aufgetreten!");
+            Lobby.getInstance().getLogger().info("&cEs ist ein Fehler aufgetreten!");
             exception.printStackTrace();
         }
 

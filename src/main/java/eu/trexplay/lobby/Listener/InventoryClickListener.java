@@ -114,7 +114,7 @@ public class InventoryClickListener implements Listener {
 
             event.setCancelled(true);
 
-            if (item.getType() == Material.CRAFTING_TABLE && item.getItemMeta().getDisplayName().equalsIgnoreCase("§3Verkaufe deine Cookie's")) {
+            if (item.getType() == Material.CRAFTING_TABLE && item.getItemMeta().getDisplayName().equalsIgnoreCase("§7Verkaufe deine Cookie's")) {
                 if (!(Lobby.getInstance().getHashMapCookies().get(player.getUniqueId()) >= 500)) {
                     player.sendMessage("§cDu musst mindestens 1000 Cookies haben!");
                     return;
@@ -124,7 +124,7 @@ public class InventoryClickListener implements Listener {
                 int newCookieAmount = currentCookies - 500;
                 Lobby.getInstance().getHashMapCookies().put(player.getUniqueId(), newCookieAmount);
                 CoinsAPI.addCoinsDB(player.getUniqueId().toString(), 5);
-                player.sendMessage("§bDu hast §4500 §6Cookies für §a5 §6Coins §3erfolgreich verkauft.");
+                player.sendMessage("§7Du hast §a500 §7Cookies für §a5 §7Coins erfolgreich verkauft.");
                 player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10, 10);
                 player.setScoreboard(Lobby.getInstance().getScoreBoardManager().setScoreBoardtoPlayer(player));
 

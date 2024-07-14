@@ -81,7 +81,7 @@ public class HikariCPManager {
             preparedStatement2.execute();
             preparedStatement2.close();
         } catch (Exception e) {
-            Bukkit.getConsoleSender().sendMessage(Lobby.getInstance().getPREFIX() + "§cBeim erstellen der §9Datenbank-Tabellen §cist ein Fehler aufgetreten§8!");
+            Bukkit.getConsoleSender().sendMessage(Lobby.getInstance().getPREFIX() + "§cBeim erstellen der Datenbank-Tabellen §cist ein Fehler aufgetreten§8!");
             e.printStackTrace();
         }
 

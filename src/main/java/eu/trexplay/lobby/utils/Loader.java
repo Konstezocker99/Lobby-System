@@ -86,7 +86,7 @@ public class Loader {
         Bukkit.getConsoleSender().sendMessage("");
         Bukkit.getConsoleSender().sendMessage("             TrexPlay - Lobby - System");
         Bukkit.getConsoleSender().sendMessage("                   Version: 1.0.0 ");
-        Bukkit.getConsoleSender().sendMessage("                       By Nick.");
+        Bukkit.getConsoleSender().sendMessage("                       By Sabi, EinNick.");
         Bukkit.getConsoleSender().sendMessage("");
         Bukkit.getConsoleSender().sendMessage("");
         Bukkit.getConsoleSender().sendMessage("____________________________________________________");
@@ -102,7 +102,7 @@ public class Loader {
         Bukkit.getConsoleSender().sendMessage("");
         Bukkit.getConsoleSender().sendMessage("             TrexPlay - Lobby - System");
         Bukkit.getConsoleSender().sendMessage("                   Version: 1.0.0 ");
-        Bukkit.getConsoleSender().sendMessage("                       By Nick.");
+        Bukkit.getConsoleSender().sendMessage("                       By Sabi, EinNiki.");
         Bukkit.getConsoleSender().sendMessage("");
         Bukkit.getConsoleSender().sendMessage("");
         Bukkit.getConsoleSender().sendMessage("____________________________________________________");

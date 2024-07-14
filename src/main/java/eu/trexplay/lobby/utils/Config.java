@@ -33,8 +33,8 @@ public class Config {
 
         if (this.fileConfiguration.getKeys(true).isEmpty() && name.equals("config.yml")) {
             this.fileConfiguration.set("config.prefix", "Lobby");
-            this.fileConfiguration.set("config.joinmessage", "Der Spieler %PLAYER% ist gejoint!");
-            this.fileConfiguration.set("config.quitmessage", "Der Spieler %PLAYER% ist gequitet!");
+            this.fileConfiguration.set("config.joinmessage", "Der Spieler &a%PLAYER% ist gejoint!");
+            this.fileConfiguration.set("config.quitmessage", "Der Spieler &a%PLAYER% ist gequitet!");
             this.save();
         }
 
